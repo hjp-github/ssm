@@ -1,17 +1,20 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ssm</groupId>
   <artifactId>ssm-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  
+
   <!-- 集中定义依赖版本号 -->
   <properties>
     <junit.version>4.12</junit.version>
     <spring.version>4.1.3.RELEASE</spring.version>
     <mybatis.version>3.2.8</mybatis.version>
     <mybatis.spring.version>1.2.2</mybatis.spring.version>
-    <mybatis.paginator.version>1.2.15</mybatis.paginator.version>
+    <mybatis.paginator.version>1.2.7</mybatis.paginator.version>
+    <paginator.version>5.0.0</paginator.version>
     <mysql.version>5.1.32</mysql.version>
     <slf4j.version>1.6.4</slf4j.version>
     <jackson.version>2.4.2</jackson.version>
@@ -30,7 +33,7 @@
     <jedis.version>2.7.2</jedis.version>
     <solrj.version>4.10.3</solrj.version>
   </properties>
-  
+
   <dependencyManagement>
     <dependencies>
       <!-- 时间操作组件 -->
@@ -98,7 +101,7 @@
       </dependency>
       <dependency>
         <groupId>com.github.pagehelper</groupId>
-        <artifactId>paginator</artifactId>
+        <artifactId>pagehelper</artifactId>
         <version>${paginator.version}</version>
       </dependency>
       <!-- MySql -->
@@ -169,7 +172,7 @@
         <artifactId>jedis</artifactId>
         <version>${jedis.version}</version>
       </dependency>
-      
+
     </dependencies>
   </dependencyManagement>
   <build>

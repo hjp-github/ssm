@@ -7,5 +7,39 @@
   </parent>
   <groupId>com.ssm</groupId>
   <artifactId>ssm-dao</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+    <dependency>
+      <groupId>com.ssm</groupId>
+      <artifactId>ssm-entity</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis-spring</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>com.github.miemiedev</groupId>
+        <artifactId>mybatis-paginator</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>com.github.pagehelper</groupId>
+        <artifactId>pagehelper</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+      </dependency>
+  </dependencies>
+  <build>
+    <defaultGoal>compile</defaultGoal>
+  </build>
 </project>

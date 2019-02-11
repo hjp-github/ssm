@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ssm-web</title>
 </head>
-<body>首页
+<body>
+	<div>
+		<div>首页</div>
+	</div>
 </body>
 </html>
