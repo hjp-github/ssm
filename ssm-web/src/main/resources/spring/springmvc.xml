@@ -11,6 +11,7 @@
   <!-- springnvc包扫描 -->
   <context:component-scan
     base-package="com.ssm.controller" />
+
   <!-- 视图跳转 -->
   <bean
     class="org.springframework.web.servlet.view.InternalResourceViewResolver">
