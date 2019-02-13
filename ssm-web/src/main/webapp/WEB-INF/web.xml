@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+  version="2.5">
   <display-name>ssm-web</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -9,7 +12,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
+
   <!-- 解决post乱码 -->
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>
@@ -23,7 +26,7 @@
     <filter-name>CharacterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  
+
   <!-- springweb前端控制器 -->
   <servlet>
     <servlet-name>ssm-web</servlet-name>
@@ -38,5 +41,5 @@
     <servlet-name>ssm-web</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-  
+
 </web-app>
