@@ -1,5 +1,7 @@
 package com.ssm.entity;
 
+import java.util.Date;
+
 public class SysMenu {
     private String id;
 
@@ -13,7 +15,7 @@ public class SysMenu {
 
     private String superiorId;
 
-    private String createTime;
+    private Date createTime;
 
     public String getId() {
         return id;
@@ -63,11 +65,11 @@ public class SysMenu {
         this.superiorId = superiorId;
     }
 
-    public String getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 }

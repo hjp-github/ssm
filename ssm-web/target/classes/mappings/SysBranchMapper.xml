@@ -6,7 +6,7 @@
     <result column="branch_code" jdbcType="VARCHAR" property="branchCode" />
     <result column="branch_name" jdbcType="VARCHAR" property="branchName" />
     <result column="superior_id" jdbcType="VARCHAR" property="superiorId" />
-    <result column="create_time" jdbcType="DATE" property="createTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
     id, branch_code, branch_name, superior_id, create_time
@@ -25,7 +25,7 @@
     insert into sys_branch (id, branch_code, branch_name, 
       superior_id, create_time)
     values (#{id,jdbcType=VARCHAR}, #{branchCode,jdbcType=VARCHAR}, #{branchName,jdbcType=VARCHAR}, 
-      #{superiorId,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE})
+      #{superiorId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.ssm.entity.SysBranch">
     insert into sys_branch
@@ -60,7 +60,7 @@
         #{superiorId,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=DATE},
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -77,7 +77,7 @@
         superior_id = #{superiorId,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        create_time = #{createTime,jdbcType=DATE},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
@@ -87,7 +87,7 @@
     set branch_code = #{branchCode,jdbcType=VARCHAR},
       branch_name = #{branchName,jdbcType=VARCHAR},
       superior_id = #{superiorId,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=DATE}
+      create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

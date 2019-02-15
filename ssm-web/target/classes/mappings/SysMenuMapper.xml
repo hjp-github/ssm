@@ -8,7 +8,7 @@
     <result column="menu_url" jdbcType="VARCHAR" property="menuUrl" />
     <result column="menu_icon" jdbcType="VARCHAR" property="menuIcon" />
     <result column="superior_id" jdbcType="VARCHAR" property="superiorId" />
-    <result column="create_time" jdbcType="VARCHAR" property="createTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
     id, menu_type, menu_name, menu_url, menu_icon, superior_id, create_time
@@ -29,7 +29,7 @@
       create_time)
     values (#{id,jdbcType=VARCHAR}, #{menuType,jdbcType=VARCHAR}, #{menuName,jdbcType=VARCHAR}, 
       #{menuUrl,jdbcType=VARCHAR}, #{menuIcon,jdbcType=VARCHAR}, #{superiorId,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=VARCHAR})
+      #{createTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.ssm.entity.SysMenu">
     insert into sys_menu
@@ -76,7 +76,7 @@
         #{superiorId,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=VARCHAR},
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -99,7 +99,7 @@
         superior_id = #{superiorId,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        create_time = #{createTime,jdbcType=VARCHAR},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
@@ -111,7 +111,7 @@
       menu_url = #{menuUrl,jdbcType=VARCHAR},
       menu_icon = #{menuIcon,jdbcType=VARCHAR},
       superior_id = #{superiorId,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=VARCHAR}
+      create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

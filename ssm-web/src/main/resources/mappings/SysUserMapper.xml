@@ -8,7 +8,7 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="staff_name" jdbcType="VARCHAR" property="staffName" />
     <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="create_time" jdbcType="DATE" property="createTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
     id, branch_id, username, password, staff_name, status, create_time
@@ -29,7 +29,7 @@
       create_time)
     values (#{id,jdbcType=VARCHAR}, #{branchId,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR}, #{staffName,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=DATE})
+      #{createTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.ssm.entity.SysUser">
     insert into sys_user
@@ -76,7 +76,7 @@
         #{status,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=DATE},
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -99,7 +99,7 @@
         status = #{status,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        create_time = #{createTime,jdbcType=DATE},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
@@ -111,7 +111,7 @@
       password = #{password,jdbcType=VARCHAR},
       staff_name = #{staffName,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=DATE}
+      create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>
