@@ -13,6 +13,13 @@
   <packaging>war</packaging>
 
   <dependencies>
+    <!-- 引用service -->
+    <dependency>
+      <groupId>com.ssm</groupId>
+      <artifactId>ssm-service</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+
     <!-- jsp相关 -->
     <dependency>
       <groupId>jstl</groupId>

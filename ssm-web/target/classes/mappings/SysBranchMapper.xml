@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.dao.SysBranchMapper">
+  <resultMap id="BaseResultMap" type="com.ssm.entity.SysBranch">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="branch_code" jdbcType="VARCHAR" property="branchCode" />
+    <result column="branch_name" jdbcType="VARCHAR" property="branchName" />
+    <result column="superior_id" jdbcType="VARCHAR" property="superiorId" />
+    <result column="create_time" jdbcType="DATE" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, branch_code, branch_name, superior_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_branch
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_branch
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.ssm.entity.SysBranch">
+    insert into sys_branch (id, branch_code, branch_name, 
+      superior_id, create_time)
+    values (#{id,jdbcType=VARCHAR}, #{branchCode,jdbcType=VARCHAR}, #{branchName,jdbcType=VARCHAR}, 
+      #{superiorId,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssm.entity.SysBranch">
+    insert into sys_branch
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="branchCode != null">
+        branch_code,
+      </if>
+      <if test="branchName != null">
+        branch_name,
+      </if>
+      <if test="superiorId != null">
+        superior_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="branchCode != null">
+        #{branchCode,jdbcType=VARCHAR},
+      </if>
+      <if test="branchName != null">
+        #{branchName,jdbcType=VARCHAR},
+      </if>
+      <if test="superiorId != null">
+        #{superiorId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.entity.SysBranch">
+    update sys_branch
+    <set>
+      <if test="branchCode != null">
+        branch_code = #{branchCode,jdbcType=VARCHAR},
+      </if>
+      <if test="branchName != null">
+        branch_name = #{branchName,jdbcType=VARCHAR},
+      </if>
+      <if test="superiorId != null">
+        superior_id = #{superiorId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssm.entity.SysBranch">
+    update sys_branch
+    set branch_code = #{branchCode,jdbcType=VARCHAR},
+      branch_name = #{branchName,jdbcType=VARCHAR},
+      superior_id = #{superiorId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=DATE}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
